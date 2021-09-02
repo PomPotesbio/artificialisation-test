@@ -7,7 +7,7 @@ image = Image.open('austin4.jpg')
 st.image(image, width=500)
 
 
-st.title('''Aritificialisation des sols en France''')
+st.title('''Artificialisation des sols en France''')
 st.write('''*Comment évaluer l'artificialisation des sols?*''')
 st.header('''**Définition d'artificialisation**''')
 st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou forestier, par des opérations d’aménagement pouvant entraîner une imperméabilisation partielle ou totale, afin de les affecter notamment à des fonctions urbaines ou de transport (habitat, activités, commerces, infrastructures, équipements publics…). "

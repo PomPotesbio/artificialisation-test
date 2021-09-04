@@ -24,12 +24,13 @@ if file_bytes == None:
 else:
     image2 = Image.open(file_bytes)
     st.image(image2, width=500)
+    info=image2.shape
+    st.write("x_crops shape: ", str(info))         
+
     
 # Try to make batches 
 
-from keras_unet.utils import plot_patches
-   
-st.write("x_crops shape: ", str(image2.shape))         
+#from keras_unet.utils import plot_patches
 #plot_patches(
     #img_arr=x_crops, # required - array of cropped out images
     #org_img_size=(1000, 1000), # required - original size of the image

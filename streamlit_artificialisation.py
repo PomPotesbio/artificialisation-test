@@ -13,6 +13,17 @@ st.header('''**Définition d'artificialisation**''')
 st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou forestier, par des opérations d’aménagement pouvant entraîner une imperméabilisation partielle ou totale, afin de les affecter notamment à des fonctions urbaines ou de transport (habitat, activités, commerces, infrastructures, équipements publics…). "
 [Ministère de la transition écologique](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
+## User input
+import os
+
+filename = st.text_input('Enter a file path:')
+try:
+    with open(filename) as input:
+        st.text(input.read())
+except FileNotFoundError:
+    st.error('File not found.')
+
+
 
 ## Try model
 

@@ -16,12 +16,11 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 ## User input
 import os
 
-filename = st.text_input('Enter a file path:')
-try:
-    with open(filename) as input:
-        st.text(input.read())
-except FileNotFoundError:
-    st.error('File not found.')
+with st.file_input() as input:
+  if input == None:
+    st.warning('No file selected.')
+  else:
+    file_contents = input.read()
 
 
 

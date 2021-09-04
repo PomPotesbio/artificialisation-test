@@ -4,4 +4,3 @@ pandas
 keras-unet
 keras
 tensorflow
-os

@@ -17,7 +17,7 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 ## User input
 
 
-file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg"), accept_multiple_files=True) 
+file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg")) 
 
 if file_bytes == None:
     st.warning('No file selected. Please select a file.')

@@ -16,11 +16,7 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 ## User input
 import os
 
-with st.file_input() as input:
-  if input == None:
-    st.warning('No file selected.')
-  else:
-    file_contents = input.read()
+file_bytes = st.file_uploader("Upload a file", type=("png", "jpg")) 
 
 
 

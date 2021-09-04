@@ -17,9 +17,15 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 import os
 
 file_bytes = st.file_uploader("Upload a file", type=("png", "jpg")) 
-if file_bytes != 'None':
-   image2 = Image.open(file_bytes)
-   st.image(image2, width=500)
+
+with file_bytes as input:
+  if input == None:
+    st.warning('No file selected.')
+  else:
+    image2 = Image.open(file_bytes)
+    st.image(image2, width=500)
+
+   
 
 
 ## Try model

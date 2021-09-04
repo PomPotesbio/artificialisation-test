@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import os
 
 from PIL import Image
 image = Image.open('austin4.jpg')
@@ -14,7 +15,7 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 [Ministère de la transition écologique](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
 ## User input
-import os
+
 
 file_bytes = st.file_uploader("Upload a file", type=("png", "jpg")) 
 
@@ -23,8 +24,6 @@ if file_bytes == None:
 else:
     image2 = Image.open(file_bytes)
     st.image(image2, width=500)
-
-   
 
 
 ## Try model

@@ -17,20 +17,29 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 ## User input
 
 
-file_bytes = st.file_uploader("Upload a file", type=("png", "jpg")) 
+file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg"), accept_multiple_files=True) 
 
 if file_bytes == None:
     st.warning('No file selected. Please select a file.')
 else:
     image2 = Image.open(file_bytes)
     st.image(image2, width=500)
+    
+# Try to make batches 
 
+from keras_unet.utils import plot_patches
+   
+st.write("x_crops shape: ", str(image2.shape))         
+#plot_patches(
+    #img_arr=x_crops, # required - array of cropped out images
+    #org_img_size=(1000, 1000), # required - original size of the image
+    #stride=100) # use only if stride is different from patch size
 
 ## Try model
 
 from keras_unet.models import satellite_unet
 
-model = satellite_unet(input_shape=(256, 256, 3))
+model = satellite_unet(input_shape=(256, 256, 3))accept_multiple_files
 
 # Opens a image and get in it in the correct data form
 im = Image.open("austin4.jpg")

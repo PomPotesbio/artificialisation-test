@@ -19,7 +19,7 @@ import os
 file_bytes = st.file_uploader("Upload a file", type=("png", "jpg")) 
 
 if file_bytes == None:
-    st.warning('No file selected.')
+    st.warning('No file selected. Please select a file.')
 else:
     image2 = Image.open(file_bytes)
     st.image(image2, width=500)

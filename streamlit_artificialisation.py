@@ -39,7 +39,7 @@ st.write("x_crops shape: ", str(image2.shape))
 
 from keras_unet.models import satellite_unet
 
-model = satellite_unet(input_shape=(256, 256, 3))accept_multiple_files
+model = satellite_unet(input_shape=(256, 256, 3))
 
 # Opens a image and get in it in the correct data form
 im = Image.open("austin4.jpg")

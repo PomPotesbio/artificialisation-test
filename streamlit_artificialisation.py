@@ -39,32 +39,3 @@ else:
         img_arr=data_crops, # required - array of cropped out images
         org_img_size=(5000, 5000), # required - original size of the image
         stride=100) # use only if stride is different from patch size
-    
-
-## Try model
-
-from keras_unet.models import satellite_unet
-
-model = satellite_unet(input_shape=(256, 256, 3))
-
-# Opens a image and get in it in the correct data form
-im = Image.open("austin4.jpg")
-im = im.resize((256, 256))
-img_list=[]
-img_list.append(np.array(im))
-img_np = np.asarray(img_list)
-x = np.asarray(img_np, dtype=np.float32)/256
-
-# Download the model
-model_filename = 'artificialisation_model_25082021.h5'
-
-#Use the model
-model.load_weights(model_filename)
-y_pred = model.predict(x)
-
-#Print the result
-from matplotlib import pyplot as plt
-plt.imshow(y_pred[0, :, :, :], cmap='gray')
-plt.savefig('saved_figure.png')
-image = Image.open('saved_figure.png')
-st.image(image, width=500, caption="Raster obtenu avec le modèle Keras Unet pour la photo d'Austin")

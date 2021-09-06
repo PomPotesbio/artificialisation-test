@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import matplotlib as plt
 import pandas as pd
 import os
 
@@ -35,4 +36,4 @@ else:
     st.write("x_crops shape: ", str(data_crops.shape))
     
      
-    st.write(plot_patches(img_arr=data_crops, org_img_size=(5000, 5000)))
+    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=(5000, 5000)))

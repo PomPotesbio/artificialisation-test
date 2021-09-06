@@ -15,8 +15,6 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 [Ministère de la transition écologique](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
 ## User input
-
-
 file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg")) 
 
 if file_bytes == None:
@@ -24,6 +22,19 @@ if file_bytes == None:
 else:
     image2 = Image.open(file_bytes)
 
+### Converting image to numpy array
+data = np.asarray(image2)
+
+### Getting smaller batches
+from keras_unet.utils import plot_patches
+   
+print("x_crops shape: ", str(data.shape))         
+plot_patches(
+    img_arr=data_crops, # required - array of cropped out images
+    org_img_size=(1000, 1000), # required - original size of the image
+    stride=100) # use only if stride is different from patch size
+
+    
 
 ## Try model
 

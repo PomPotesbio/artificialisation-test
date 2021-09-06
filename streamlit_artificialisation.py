@@ -25,7 +25,7 @@ if file_bytes == None:
 else:
     image2 = Image.open(file_bytes)
     ### Getting smaller batches
-    data = np.array(Image.open("/home/cla/stage/tyrol-w1.jpg"))
+    data = np.array(image2)
     
     data_crops = get_patches(
     img_arr=data, # required - array of images to be cropped

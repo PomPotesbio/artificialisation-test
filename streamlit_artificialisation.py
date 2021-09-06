@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import os
 
+from keras_unet.utils import get_patches
 from keras_unet.utils import plot_patches
 
 from PIL import Image
@@ -23,17 +24,15 @@ if file_bytes == None:
     st.warning('No file selected. Please select a file.')
 else:
     image2 = Image.open(file_bytes)
-    ### Converting image to numpy array
-    data = np.asarray(image2)
-
     ### Getting smaller batches
+    data = np.array(Image.open("/home/cla/stage/tyrol-w1.jpg"))
     
-    st.write("x_crops shape: ", str(data.shape))         
-    plot_patches(
-        img_arr=data, # required - array of cropped out images
-        org_img_size=(1000, 1000), # required - original size of the image
-        stride=100) # use only if stride is different from patch size
+    data_crops = get_patches(
+    img_arr=data, # required - array of images to be cropped
+    size=500, # default is 256
+    stride=500) # default is 256
 
+    print("x_crops shape: ", str(x_crops.shape))
     
 
 ## Try model

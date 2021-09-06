@@ -21,18 +21,14 @@ file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg"))
 if file_bytes == None:
     st.warning('No file selected. Please select a file.')
 else:
-    image2 = Image.open(file_bytes)
-    st.image(image2, width=500)
+    im = Image.open(file_bytes)
+    im_size=im.size
+    st.image(im, width=500)
     
-    ### Getting smaller batches
-    data = np.array(image2)
-    data_crops = get_patches(
-    img_arr=data, # required - array of images to be cropped
-    size=500, # default is 256
-    stride=500) # default is 256
-
-    st.write("x_crops shape: ", str(data_crops.shape))
+    ### Getting smaller batches - type(data) and type(data_crops) are numpy.ndarray
+    data = np.array(im)
+    data_crops = get_patches(img_arr=data)
     
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=(5000, 5000)))
+    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=im_size))
    

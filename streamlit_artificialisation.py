@@ -4,13 +4,10 @@ import matplotlib as plt
 import pandas as pd
 import os
 
+from PIL import Image
+
 from keras_unet.utils import get_patches
 from keras_unet.utils import plot_patches
-
-from PIL import Image
-image = Image.open('austin4.jpg')
-st.image(image, width=500)
-
 
 st.title('''Artificialisation des sols en France''')
 st.write('''*Comment évaluer l'artificialisation des sols?*''')
@@ -25,9 +22,10 @@ if file_bytes == None:
     st.warning('No file selected. Please select a file.')
 else:
     image2 = Image.open(file_bytes)
+    st.image(image2, width=500)
+    
     ### Getting smaller batches
     data = np.array(image2)
-    
     data_crops = get_patches(
     img_arr=data, # required - array of images to be cropped
     size=500, # default is 256

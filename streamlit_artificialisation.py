@@ -34,6 +34,12 @@ else:
 
     st.write("x_crops shape: ", str(data_crops.shape))
     
+     
+    plot_patches(
+        img_arr=data_crops, # required - array of cropped out images
+        org_img_size=(5000, 5000), # required - original size of the image
+        stride=100) # use only if stride is different from patch size
+    
 
 ## Try model
 

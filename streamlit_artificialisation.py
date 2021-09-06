@@ -32,7 +32,7 @@ else:
     size=500, # default is 256
     stride=500) # default is 256
 
-    print("x_crops shape: ", str(x_crops.shape))
+    print("x_crops shape: ", str(data_crops.shape))
     
 
 ## Try model

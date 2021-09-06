@@ -32,6 +32,7 @@ else:
     stride=500) # default is 256
 
     st.write("x_crops shape: ", str(data_crops.shape))
-  
-    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=(5000, 5000)))
+    
     st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=(5000, 5000)))
+   

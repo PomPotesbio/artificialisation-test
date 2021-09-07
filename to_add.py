@@ -64,3 +64,14 @@ plt.figure(figsize=(10,10))
 plt.imshow(im_reconstructed[0])
 plt.show()
 
+# Obtenir les infos d'une dale
+import rasterio as rio
+import rasterio.plot
+
+import fiona
+import pyproj
+image=rio.open("...")
+print(f"Nom du fichier image : {image.name}")
+print(f"Projection associée : {image.crs}")
+print(f"Couverture spatiale : {image.bounds}")
+print(f"Nombre de bandes : {image.count}")

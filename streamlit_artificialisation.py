@@ -27,11 +27,7 @@ if file_bytes == None:
 else:
     im = Image.open(file_bytes)
     im_size=im.size
-    
-    image=rio.open(im)
-    st.write(type(image))
-    
-    
+ 
     
       
     

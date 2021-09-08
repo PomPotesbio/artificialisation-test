@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib as plt
 import pandas as pd
 import rasterio as rio
+import fiona
 import os
 
 from PIL import Image

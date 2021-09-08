@@ -4,6 +4,7 @@ import matplotlib as plt
 import pandas as pd
 import rasterio as rio
 import rasterio.plot
+import geopandas as gpd
 import fiona
 import os
 

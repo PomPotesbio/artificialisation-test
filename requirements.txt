@@ -6,4 +6,3 @@ keras-unet
 keras
 rasterio
 fiona
-os

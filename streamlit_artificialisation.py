@@ -27,7 +27,7 @@ else:
     im_size=im.size
     
     im_rio=rio.open(file_bytes)
-    im_name=im_rio.name
+    im_name="a"
     im_proj=im_rio.crs
     im_boundingbox=im_rio.bounds
     im_bands=im_rio.count   

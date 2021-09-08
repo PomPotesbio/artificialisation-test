@@ -1,6 +1,6 @@
 numpy
 matplotlib
-pandas
+geopandas
 tensorflow
 keras-unet
 keras

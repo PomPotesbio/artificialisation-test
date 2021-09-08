@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib as plt
 import pandas as pd
+import rasterio as rio
 import os
 
 from PIL import Image
@@ -23,7 +24,16 @@ if file_bytes == None:
 else:
     im = Image.open(file_bytes)
     im_size=im.size
-    st.image(im, width=500)
+    
+    im_rio=rio.open(file_bytes)
+    im_name=im_rio.name
+    im_proj=im_rio.crs
+    im_boundingbox=im_rio.bounds
+    im_bands=im_rio.count   
+    
+    st.write("L'image s'appelle:", im_name, "La taille de l'image est de:", im_size, "La projection de l'image est:", im_proj, "Ses limites dont définies par", im_boundingbox)
+    
+      
     
     ### Getting smaller batches - type(data) and type(data_crops) are numpy.ndarray
     data = np.array(im)

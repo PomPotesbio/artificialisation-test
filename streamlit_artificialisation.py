@@ -17,7 +17,7 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 [Ministère de la transition écologique](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
 ## User input
-file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg")) 
+file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg", "tif", "tiff", "jp2")) 
 
 if file_bytes == None:
     st.warning('No file selected. Please select a file.')

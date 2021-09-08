@@ -28,10 +28,10 @@ else:
     im = Image.open(file_bytes)
     im_size=im.size
     
-    image=rio.open(file_bytes)
+    image=rio.open(im)
     st.write(type(image))
     
-    st.write("L'image s'appelle:", im_name, "La taille de l'image est de:", im_size, "La projection de l'image est:", im_proj, "Ses limites dont définies par", im_boundingbox)
+    
     
       
     

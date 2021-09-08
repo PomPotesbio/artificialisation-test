@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib as plt
 import pandas as pd
 import rasterio as rio
+import rasterio.plot
 import fiona
 import os
 
@@ -26,11 +27,11 @@ else:
     im = Image.open(file_bytes)
     im_size=im.size
     
-    im_rio=rio.open(file_bytes)
-    im_name="a"
-    im_proj=im_rio.crs
-    im_boundingbox=im_rio.bounds
-    im_bands=im_rio.count   
+    image=rio.open(file_bytes)
+    im_name=image.name
+    im_proj=image.crs
+    im_boundingbox=image.bounds
+    im_bands=image.count   
     
     st.write("L'image s'appelle:", im_name, "La taille de l'image est de:", im_size, "La projection de l'image est:", im_proj, "Ses limites dont définies par", im_boundingbox)
     

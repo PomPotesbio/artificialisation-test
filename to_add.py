@@ -75,3 +75,16 @@ print(f"Nom du fichier image : {image.name}")
 print(f"Projection associée : {image.crs}")
 print(f"Couverture spatiale : {image.bounds}")
 print(f"Nombre de bandes : {image.count}")
+
+
+  im_name=image.name
+    im_proj=image.crs
+    im_boundingbox=image.bounds
+    im_bands=image.count   
+    st.write("L'image s'appelle:", im_name, "La taille de l'image est de:", im_size, "La projection de l'image est:", im_proj, "Ses limites dont définies par", im_boundingbox)
+    
+       
+    image=rio.open(im)
+    st.write(type(image))
+    
+    

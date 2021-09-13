@@ -25,10 +25,10 @@ st.image(list_images, list_captions, width=256)
 
 
 ## User input
-user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('None-selected','Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
-st.write('You selected:', user_input)
+user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Aucune ville','Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
+st.write('Vous avez choisi:', user_input)
  
-if user_input == "None-selected":
+if user_input == "Aucune ville":
     st.warning('No file selected. Please select a file.')
 else:
     if user_input == "Paris":

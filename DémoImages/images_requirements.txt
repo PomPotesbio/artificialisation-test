@@ -1,0 +1,2 @@
+So far, are only accepted jp2, jpg, png. No tiff files yet.
+Must be square.

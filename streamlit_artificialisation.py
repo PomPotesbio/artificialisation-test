@@ -23,26 +23,29 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 user_input = st.text_input("Choisir sa ville")
 if user_input == None:
     st.warning('No file selected. Please select a file.')
+user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
+st.write('You selected:', user_input)
+    
 else:
-    if user_input == "Paris" or user_input=="paris":
+    if user_input == "Paris":
         im=Image.open("DémoImages/Paris.jpg")
         im_size=im.size 
         st.image(im)
-    elif user_input == "Strasbourg" or user_input=="strasbourg":
-        im=Image.open("/DémoImages/Strasbourg.jpg")
+    elif user_input == "Strasbourg":
+        im=Image.open("DémoImages/Strasbourg.jpg")
         im_size=im.size
-    elif user_input == "Lectoure" or user_input=="lectoure":
-        im=Image.open("/DémoImages/Lectoure.jpg")
+    elif user_input == "Lectoure":
+        im=Image.open("DémoImages/Lectoure.jpg")
         im_size=im.size
-    elif user_input == "Montargis" or user_input=="montargis":
-        im=Image.open("/DémoImages/Montargis.jpg")
+    elif user_input == "Montargis":
+        im=Image.open("DémoImages/Montargis.jpg")
         im_size=im.size
  
     ### Getting smaller batches - type(data) and type(data_crops) are numpy.ndarray
-        data = np.array(im)
-        data_crops = get_patches(img_arr=data)
+    data = np.array(im)
+    data_crops = get_patches(img_arr=data)
     
-        st.set_option('deprecation.showPyplotGlobalUse', False)
-        st.pyplot(plot_patches(img_arr=data_crops, org_img_size=im_size))
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=im_size))
     
    

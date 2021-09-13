@@ -87,4 +87,12 @@ print(f"Nombre de bandes : {image.count}")
     image=rio.open(im)
     st.write(type(image))
     
+
     
+    file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg", "tif", "tiff", "jp2", "jpeg")) 
+
+if file_bytes == None:
+    st.warning('No file selected. Please select a file.')
+else:
+    im = Image.open(file_bytes)
+    im_size=im.size

@@ -19,7 +19,8 @@ st.header('''**Définition d'artificialisation**''')
 st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou forestier, par des opérations d’aménagement pouvant entraîner une imperméabilisation partielle ou totale, afin de les affecter notamment à des fonctions urbaines ou de transport (habitat, activités, commerces, infrastructures, équipements publics…). "
 [Ministère de la transition éque](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
-st.image((Image.open("DémoImages/Paris.jpg"), Image.open("DémoImages/Strasbourg.jpg"), Image.open("DémoImages/Lectoure.jpg"), Image.open("DémoImages/Montargis.jpg")), 256)
+list_images=[Image.open("DémoImages/Paris.jpg"), Image.open("DémoImages/Strasbourg.jpg"), Image.open("DémoImages/Lectoure.jpg"), Image.open("DémoImages/Montargis.jpg")]
+st.image(list_images, width=256)
 
 
 ## User input

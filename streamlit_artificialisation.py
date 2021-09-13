@@ -1,12 +1,7 @@
 import streamlit as st
 import numpy as np
+import cv2
 import matplotlib as plt
-import pandas as pd
-import rasterio as rio
-import rasterio.plot
-import geopandas as gpd
-import fiona
-import os
 
 from PIL import Image
 
@@ -44,11 +39,39 @@ else:
         im=Image.open("DémoImages/Montargis.jpg")
         im_size=im.size
  
-    ### Getting smaller batches - type(data) and type(data_crops) are numpy.ndarray
+    ### Getting smaller batches - type(data) and type(image_crops) are numpy.ndarray
     data = np.array(im)
-    data_crops = get_patches(img_arr=data)
+    image_crops = get_patches(img_arr=data)
+    image_crops_normalized = np.asarray(image_crops, dtype=np.float32)/image_crops.max()
     
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=im_size))
+    ### Import model and use it
+    from keras_unet.models import satellite_unet
+    model = satellite_unet(input_shape=(256, 256, 3))
+    model_filename = 'artificialisation_model_06092021.h5'
+    model.load_weights(model_filename)
+    masks = model.predict(image_crops_normalized)
     
-   
+    ### Get the data ready (reshape, stack arrays)
+    list_masks=[]
+    for i in masks:
+     a = cv2.threshold(i, 0.15, 255, cv2.THRESH_BINARY)
+     list_masks.append(a[1])
+     
+    new_list_masks=[]
+    for i in list_masks:
+     b=np.stack((i, i, i), axis=2)
+     new_list_masks.append(b)
+     
+    array_masks=np.array(new_list_masks)
+    
+    ### Print final data
+    from keras_unet.utils import reconstruct_from_patches
+
+    st.write("x_crops shape: ", str(image_crops.shape))
+    x_reconstructed = reconstruct_from_patches(img_arr=array_masks, org_img_size=im_size)
+
+    st.write("x_reconstructed shape: ", str(x_reconstructed.shape))
+
+    plt.figure(figsize=(10,10))
+    plt.imshow(x_reconstructed[0])
+    plt.show()

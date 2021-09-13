@@ -20,12 +20,11 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 [Ministère de la transition éque](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
 ## User input
-user_input = st.text_input("Choisir sa ville")
-if user_input == None:
-    st.warning('No file selected. Please select a file.')
 user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
 st.write('You selected:', user_input)
-    
+
+if user_input == None:
+    st.warning('No file selected. Please select a file.')
 else:
     if user_input == "Paris":
         im=Image.open("DémoImages/Paris.jpg")

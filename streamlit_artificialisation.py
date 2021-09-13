@@ -37,14 +37,11 @@ else:
         im=Image.open("/DémoImages/Montargis.jpg")
         im_size=im.size
  
-    
-      
-    
     ### Getting smaller batches - type(data) and type(data_crops) are numpy.ndarray
-    data = np.array(im)
-    data_crops = get_patches(img_arr=data)
+        data = np.array(im)
+        data_crops = get_patches(img_arr=data)
     
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.pyplot(plot_patches(img_arr=data_crops, org_img_size=im_size))
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot(plot_patches(img_arr=data_crops, org_img_size=im_size))
     
    

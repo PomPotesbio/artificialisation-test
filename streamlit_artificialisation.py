@@ -20,6 +20,7 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 [Ministère de la transition éque](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
 list_images=[Image.open("DémoImages/Paris.jpg"), Image.open("DémoImages/Strasbourg.jpg"), Image.open("DémoImages/Lectoure.jpg"), Image.open("DémoImages/Montargis.jpg")]
+list_captions=["Paris","Strasbourg","Lectoure","Montargis"]
 st.image(list_images, caption="Paris (en haut à gauche), Strasbourg (en haut à droite), Lectoure (en bas à gauche) et Montargis (en bas à droite)", width=256)
 
 

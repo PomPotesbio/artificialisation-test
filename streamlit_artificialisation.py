@@ -17,15 +17,21 @@ st.title('''Artificialisation des sols en France''')
 st.write('''*Comment évaluer l'artificialisation des sols?*''')
 st.header('''**Définition d'artificialisation**''')
 st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou forestier, par des opérations d’aménagement pouvant entraîner une imperméabilisation partielle ou totale, afin de les affecter notamment à des fonctions urbaines ou de transport (habitat, activités, commerces, infrastructures, équipements publics…). "
-[Ministère de la transition écologique](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
+[Ministère de la transition éque](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
 ## User input
-file_bytes = st.file_uploader("Upload a tile", type=("png", "jpg", "tif", "tiff", "jp2", "jpeg")) 
-
-if file_bytes == None:
-    st.warning('No file selected. Please select a file.')
-else:
-    im = Image.open(file_bytes)
+user_input = st.text_input("Choisir sa ville", default_value_goes_here)
+if user_input == "Paris" or user_input=="paris":
+    im=Image.open("/DemoImages/Paris.jpg")
+    im_size=im.size
+    elif user_input == "Strasbourg" or user_input=="strasbourg":
+    im=Image.open("/DemoImages/Strasbourg.jpg")
+    im_size=im.size
+    elif user_input == "Lectoure" or user_input=="lectoure":
+    im=Image.open("/DemoImages/Lectoure.jpg")
+    im_size=im.size
+    elif user_input == "Montargis" or user_input=="montargis":
+    im=Image.open("/DemoImages/Montargis.jpg")
     im_size=im.size
  
     

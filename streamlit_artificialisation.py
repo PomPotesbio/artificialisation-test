@@ -24,10 +24,10 @@ st.image(list_images, caption="Paris (en haut à gauche), Strasbourg (en haut à
 
 
 ## User input
-user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Non-selected','Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
+user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('None-selected','Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
 st.write('You selected:', user_input)
  
-if user_input == None:
+if user_input == "None-selected":
     st.warning('No file selected. Please select a file.')
 else:
     if user_input == "Paris":

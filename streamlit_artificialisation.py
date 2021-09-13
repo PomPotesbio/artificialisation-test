@@ -25,16 +25,16 @@ if user_input == None:
     st.warning('No file selected. Please select a file.')
 else:
     if user_input == "Paris" or user_input=="paris":
-        im=Image.open("/DemoImages/Paris.jpg")
+        im=Image.open("/DémoImages/Paris.jpg")
         im_size=im.size 
     elif user_input == "Strasbourg" or user_input=="strasbourg":
-        im=Image.open("/DemoImages/Strasbourg.jpg")
+        im=Image.open("/DémoImages/Strasbourg.jpg")
         im_size=im.size
     elif user_input == "Lectoure" or user_input=="lectoure":
-        im=Image.open("/DemoImages/Lectoure.jpg")
+        im=Image.open("/DémoImages/Lectoure.jpg")
         im_size=im.size
     elif user_input == "Montargis" or user_input=="montargis":
-        im=Image.open("/DemoImages/Montargis.jpg")
+        im=Image.open("/DémoImages/Montargis.jpg")
         im_size=im.size
  
     

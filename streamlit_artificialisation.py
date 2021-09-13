@@ -72,6 +72,5 @@ else:
 
     st.write("x_reconstructed shape: ", str(x_reconstructed.shape))
 
-    #plt.figure(figsize=(10,10))
-    plt.imshow(x_reconstructed[0])
-    plt.show()
+    st.plt(figsize=(10,10), x_reconstructed[0])
+    

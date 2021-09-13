@@ -1,8 +1,6 @@
 numpy
 matplotlib
-geopandas
 tensorflow
 keras-unet
 keras
-rasterio
-fiona
+cv2

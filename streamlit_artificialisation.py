@@ -19,17 +19,19 @@ st.header('''**Définition d'artificialisation**''')
 st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou forestier, par des opérations d’aménagement pouvant entraîner une imperméabilisation partielle ou totale, afin de les affecter notamment à des fonctions urbaines ou de transport (habitat, activités, commerces, infrastructures, équipements publics…). "
 [Ministère de la transition éque](https://www.ecologie.gouv.fr/artificialisation-des-sols) ''')
 
+st.image((Image.open("DémoImages/Paris.jpg"), Image.open("DémoImages/Strasbourg.jpg"), Image.open("DémoImages/Lectoure.jpg"), Image.open("DémoImages/Montargis.jpg")), 256)
+
+
 ## User input
 user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
 st.write('You selected:', user_input)
-
+ 
 if user_input == None:
     st.warning('No file selected. Please select a file.')
 else:
     if user_input == "Paris":
         im=Image.open("DémoImages/Paris.jpg")
         im_size=im.size 
-        st.image(im)
     elif user_input == "Strasbourg":
         im=Image.open("DémoImages/Strasbourg.jpg")
         im_size=im.size

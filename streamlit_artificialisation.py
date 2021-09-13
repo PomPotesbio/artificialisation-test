@@ -24,7 +24,7 @@ st.image(list_images, caption="Paris (en haut à gauche), Strasbourg (en haut à
 
 
 ## User input
-user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
+user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Non-selected','Lectoure', 'Paris', 'Strasbourg', 'Montargis'))
 st.write('You selected:', user_input)
  
 if user_input == None:

@@ -71,10 +71,5 @@ else:
     x_reconstructed = reconstruct_from_patches(img_arr=array_masks, org_img_size=im_size)
 
     st.write("x_reconstructed shape: ", str(x_reconstructed.shape))
-    
-    a=x_reconstructed[0]
-    
-    st.plt(fig=(),a)
-    plt.fig()
    
-    
+    st.pyplot(x_reconstructed)

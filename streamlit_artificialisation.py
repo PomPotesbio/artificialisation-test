@@ -29,7 +29,7 @@ user_input = st.selectbox('Quelle ville souhaitez-vous voir?',('Aucune ville','L
 st.write('Vous avez choisi:', user_input)
  
 if user_input == "Aucune ville":
-    st.warning('No file selected. Please select a file.')
+    st.warning("Sélectionnez une ville s'il vous plaît.")
 else:
     if user_input == "Paris":
         im=Image.open("DémoImages/Paris.jpg")

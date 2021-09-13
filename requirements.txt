@@ -3,4 +3,5 @@ matplotlib
 tensorflow
 keras-unet
 keras
+opencv-python-headless
 cv2

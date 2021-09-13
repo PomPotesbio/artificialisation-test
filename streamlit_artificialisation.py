@@ -21,18 +21,21 @@ st.write('''"Ce phénomène consiste à transformer un sol naturel, agricole ou 
 
 ## User input
 user_input = st.text_input("Choisir sa ville", default_value_goes_here)
-if user_input == "Paris" or user_input=="paris":
-    im=Image.open("/DemoImages/Paris.jpg")
-    im_size=im.size
+if user_input == None:
+    st.warning('No file selected. Please select a file.')
+else:
+    if user_input == "Paris" or user_input=="paris":
+        im=Image.open("/DemoImages/Paris.jpg")
+        im_size=im.size 
     elif user_input == "Strasbourg" or user_input=="strasbourg":
-    im=Image.open("/DemoImages/Strasbourg.jpg")
-    im_size=im.size
+        im=Image.open("/DemoImages/Strasbourg.jpg")
+        im_size=im.size
     elif user_input == "Lectoure" or user_input=="lectoure":
-    im=Image.open("/DemoImages/Lectoure.jpg")
-    im_size=im.size
+        im=Image.open("/DemoImages/Lectoure.jpg")
+        im_size=im.size
     elif user_input == "Montargis" or user_input=="montargis":
-    im=Image.open("/DemoImages/Montargis.jpg")
-    im_size=im.size
+        im=Image.open("/DemoImages/Montargis.jpg")
+        im_size=im.size
  
     
       

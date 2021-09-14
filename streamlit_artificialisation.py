@@ -73,7 +73,7 @@ else:
     org_img_size=im_size)
     
     from matplotlib import figure
-    plt.figure.Figure(figsize=(10,10))
+    matplotlib.figure.Figure(figsize=(10,10))
     plt.imshow(x_reconstructed[0])
     plt.show()
    

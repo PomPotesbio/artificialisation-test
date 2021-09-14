@@ -66,10 +66,11 @@ else:
     
     ### Print final data
     from keras_unet.utils import reconstruct_from_patches
-
-    st.write("x_crops shape: ", str(image_crops.shape))
-    x_reconstructed = reconstruct_from_patches(img_arr=array_masks, org_img_size=im_size)
-
-    st.write("x_reconstructed shape: ", str(x_reconstructed.shape))
-   
-    st.pyplot(x_reconstructed)
+    
+    x_reconstructed = reconstruct_from_patches(
+    img_arr=array_masks, # required - array of cropped out images
+    org_img_size=im_size)
+    
+    plt.figure(figsize=(10,10))
+    plt.imshow(x_reconstructed[0])
+    plt.show()

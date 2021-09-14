@@ -72,5 +72,4 @@ else:
     org_img_size=im_size)
     
     plt.figure(figsize=(10,10))
-    plt.imshow(x_reconstructed[0])
-    plt.show()
+    st.plt(x_reconstructed[0])

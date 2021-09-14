@@ -71,7 +71,7 @@ else:
     img_arr=array_masks, # required - array of cropped out images
     org_img_size=im_size)
     
-    st.write(x_reconstructed[0].shape)
+    st.write(x_reconstructed[0])
     #final_pred=Image.fromarray(x_reconstructed[0])
     #final_pred.resize((600,600))
     #st.image(final_pred, caption="L'artificialisation de la ville choisie")

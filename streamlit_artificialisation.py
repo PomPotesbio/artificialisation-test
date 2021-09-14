@@ -64,6 +64,10 @@ else:
      
     array_masks=np.array(new_list_masks)
     
+    
+    st.write(array_masks)
+    
+    
     ### Print final data
     from keras_unet.utils import reconstruct_from_patches
     

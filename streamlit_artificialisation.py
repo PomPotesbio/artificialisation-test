@@ -76,6 +76,6 @@ else:
     from matplotlib import figure
     matplotlib.figure.Figure(figsize=(10,10))
     plt.imshow(x_reconstructed[0])
-    plt.show()
+    st.pyplot()
    
     

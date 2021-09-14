@@ -63,10 +63,7 @@ else:
      new_list_masks.append(b)
      
     array_masks=np.array(new_list_masks)
-    
-    
-    st.write(array_masks)
-    
+      
     
     ### Print final data
     from keras_unet.utils import reconstruct_from_patches
@@ -74,8 +71,8 @@ else:
     x_reconstructed = reconstruct_from_patches(
     img_arr=array_masks, # required - array of cropped out images
     org_img_size=im_size)
-    
-    final_pred=Image.fromarray((x_reconstructed[0] * 255).astype(np.uint8))
-    final_pred.resize((600,600))
-    st.image(final_pred, caption="L'artificialisation de la ville choisie")
+    plt.figure(figsize=(10,10))
+    plt.imshow(x_reconstructed[0])
+    plt.show()
+   
     

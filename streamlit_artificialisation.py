@@ -55,7 +55,7 @@ else:
     ### Get the data ready (reshape, stack arrays)
     list_masks=[]
     for i in masks:
-     a = cv2.threshold(i, masks.max()/1.5, 255, cv2.THRESH_BINARY)
+     a = cv2.threshold(i, masks.max()/2.5, 255, cv2.THRESH_BINARY)
      list_masks.append(a[1])
      
     new_list_masks=[]

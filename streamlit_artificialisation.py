@@ -71,7 +71,9 @@ else:
     x_reconstructed = reconstruct_from_patches(
     img_arr=array_masks, # required - array of cropped out images
     org_img_size=im_size)
-    plt.figure(figsize=(10,10))
+    
+    from matplotlib import figure
+    plt.figure.Figure(figsize=(10,10))
     plt.imshow(x_reconstructed[0])
     plt.show()
    

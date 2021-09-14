@@ -71,4 +71,4 @@ else:
     img_arr=array_masks, # required - array of cropped out images
     org_img_size=im_size)
     
-    st.plt(x_reconstructed[0])
+    st.pyplot(x_reconstructed[0])
